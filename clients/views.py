@@ -1,3 +1,4 @@
+from django.core.checks import messages
 from django.shortcuts import render
 
 from clients.models import clients_model
@@ -14,5 +15,4 @@ def register_page(request):
     password = request.POST.get('Password')  
     user = clients_model(username = username, password  = password, globalScore = 0,  hoursPracticed = 0)
     user.save()
-    print('your username = ',username,'  password = ',password)
     return render(request, 'register.html', {'username':username})
