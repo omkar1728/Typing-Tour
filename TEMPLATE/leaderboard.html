@@ -42,7 +42,7 @@
 				{% for i in user%}
 				<div class="lboard_mem">
 					<div class="name_bar">
-						<p><span>{{forloop.counter}}</span> {{i.username}}</p>
+						<p><span>{{forloop.counter}}.</span> {{i.username}}</p>
 					</div>
 					<div class="points">
 						{{i.score}}
@@ -51,14 +51,16 @@
 				{% endfor %}
 			</div>
 			<div class="lboard_item month" style="display: block;">
+				{% for i in user%}
 				<div class="lboard_mem">
 					<div class="name_bar">
-						<p><span>1.</span> insert username here for friends only</p>
+						<p><span>{{forloop.counter}}.</span> {{i.username}}</p>
 					</div>
 					<div class="points">
-						1195 points
+						{{i.score}}
 					</div>
 				</div>
+				{% endfor %}
 				</div>
 			</div>
 		</div>
