@@ -6,4 +6,7 @@ class clients_model(models.Model):
     password = models.CharField(max_length=50)
     globalScore = models.BigIntegerField()
     hoursPracticed = models.IntegerField()
+
+    def __str__(self):
+        return self.username 
     
