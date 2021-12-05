@@ -19,9 +19,15 @@ def register_page(request):
 
 def leaderboard(request):
     users = clients_model.objects.all()
-    userlist = []
-    print(users)
+    temp_user_list = []
     for user in users:
-        temp = {'username':user.username,'score':user.globalScore}
+        temp_user_list.append([user.globalScore, user.username])
+    print('before sorting',temp_user_list)
+    temp_user_list.sort()
+    print('after sorting',temp_user_list)    
+    temp_user_list.reverse()
+    userlist = []
+    for element in temp_user_list:
+        temp = {'username':element[1],'score':element[0]}
         userlist.append(temp)
     return render(request,'leaderboard.html', {'user':userlist})    
