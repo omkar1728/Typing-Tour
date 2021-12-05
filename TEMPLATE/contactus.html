@@ -7,6 +7,13 @@
     <title>Contact Us</title>
 </head>
 <body>
-    this will be contact us page
+    <!--insert navbar here-->
+    <form method="POST" >
+        {% csrf_token %}
+        <input type="text" name = 'Subject' placeholder="Subject"/>
+        <input type="text" name = 'Message'placeholder="Message"/>
+        <button type="submit">Submit</button> 
+    </form>
+
 </body>
 </html>
