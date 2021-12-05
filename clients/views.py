@@ -16,3 +16,12 @@ def register_page(request):
     user = clients_model(username = username, password  = password, globalScore = 0,  hoursPracticed = 0)
     user.save()
     return render(request, 'register.html', {'username':username})
+
+def leaderboard(request):
+    users = clients_model.objects.all()
+    userlist = []
+    print(users)
+    for user in users:
+        temp = {'username':user.username,'score':user.globalScore}
+        userlist.append(temp)
+    return render(request,'leaderboard.html', {'user':userlist})    

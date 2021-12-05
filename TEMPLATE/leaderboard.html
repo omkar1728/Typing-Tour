@@ -39,15 +39,16 @@
 
 		<div class="lboard_wrap">
 			<div class="lboard_item today" style="display: none;">
+				{% for i in user%}
 				<div class="lboard_mem">
 					<div class="name_bar">
-						<p><span>1.</span> insert username here for global</p>
+						<p><span>{{forloop.counter}}</span> {{i.username}}</p>
 					</div>
 					<div class="points">
-						195 points
+						{{i.score}}
 					</div>
 				</div>
-			
+				{% endfor %}
 			</div>
 			<div class="lboard_item month" style="display: block;">
 				<div class="lboard_mem">
