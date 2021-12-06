@@ -6,5 +6,6 @@ urlpatterns = [
     path('/',views.home),
     path('/base',views.base,name=  'base'),
     path('/keyboard',views.keyboard,name='keyboard'),
+
 ]
 
