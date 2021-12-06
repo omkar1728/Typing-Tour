@@ -5,9 +5,7 @@ from clients.models import clients_model
 
 # Create your views here.
 
-def login_page(request):
-    username = request.POST.get('Username')
-    password = request.POST.get('Password')  
+def login_page(request):  
     return render(request, 'login.html')
 
 def register_page(request):
