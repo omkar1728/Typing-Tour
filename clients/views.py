@@ -11,11 +11,7 @@ def login_page(request):
     return render(request, 'login.html')
 
 def register_page(request):
-    username = request.POST.get('Username')
-    password = request.POST.get('Password')  
-    user = clients_model(username = username, password  = password, globalScore = 0,  hoursPracticed = 0)
-    user.save()
-    return render(request, 'register.html', {'username':username})
+    return render(request, 'register.html')
 
 def leaderboard(request):
     users = clients_model.objects.all()
