@@ -1,0 +1,118 @@
+<html>
+    <head>
+     <title>
+         TYPING Tour
+     </title>
+     	<!-- css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="css/keyboard_style.css" /> -->
+
+    </head>
+    <body >
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a href="#" class="navbar-brand mb-0 h1">Typing Tour</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav";>
+                    <li class="nav-item active">
+                        <a href="{% url 'register' %}" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'login' %}" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'leaderboard' %}" class="nav-link">Leaderboard</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'contactUs' %}" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'about us' %}" class="nav-link">About</a>
+                    </li>
+                </ul>
+        
+            </div>
+            <div class="backimg">
+            </div>
+            <h1 style="color: black; text-align: center; font-size: 30; font-family: all;"> ABOUT US</h1>
+            <img src="/static/photo3.jpg" height="50%" width="40%" align="right">
+                <h2  style="   font-size: 24;">(1). <b> Introduction </b></h2>
+                <p style= " ; font-size: 18;">We aim to create a typing tour webapp which has user authentication features.<br> it has courses with different difficulty levels which will help the user to learn and test<br> their typing skills.<br> 
+                the test has a real time sync system, i.e. as soon as the user starts typing something,<br> 
+                the system will be analysing it in real time<br> and once the test ends, the user will receive a score based on<br> 
+                their performance along with the complete statistical data which can be exported if the user wishes so.<br>
+    
+            </p>
+            <h2 style="font-size: 24">(2). <b>Structure</b></h2>
+            <p2 style="font-size: 18">
+                The architecture or the framework of the webapp can be explained in terms of frontend and backend.<br> 
+                the interaction between user, frontend and the backend is what the architecture of this webapp is based on.<br> 
+                the user interacts with the frontend which displays the several pages like homepage, login page, about us page, etc.<br> 
+                the frontend is designed using html,css and javascript languages. On the other hand,<br> 
+                the backend handles tasks like calculation, database management and rendering webpages.<br> 
+                the framework of the backend is based on Django.<br>
+                
+            </p2>
+            <h3 style="font-size: 24">(3). <b>Our Motive</b></h3>
+            <p3 style="font-size: 18 ">
+                To teach people how to type in a professional manner with help of techniques like 10 finger<br>
+                typing enabling them to achive productivity.<br>
+                this webapp will act as a education tool for all people who work with<br>
+                electronic devices and require typing as a skillset.The uses of this webapp are:<br> 
+                a typing test for interviews, home schooling, competitive typing test,etc.<br>
+                 
+            </p3>
+            <h4 style="font-size: 24">(4). <b>Other Updates</b> </h4>
+            <p4  style="font-size: 18 " >
+                We like to improvise the tests part of our webapp even more to make the results more accurate and helpful.<br> 
+                We also plan to commercialize this app by providing promo codes and offers as a<br> 
+                reward for achieving a certain score in the typing tests<br>
+            </p4>
+            <br><br><br><br><br>
+        
+    <br><br><br><br>
+    
+            
+            
+            <br><br><br><br>
+            
+        <!-- css inline -->
+<style media="screen">
+    .navbar-brand{
+        font-size: 30px;
+        padding-left: 40px;
+        padding-top: 5px;
+    }
+    .nav-item{
+        padding-left: 50px;
+        font-size: 15px;
+    }
+    .nav-link{
+    
+    } */
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    body {
+    font: 71%/1.5 Verdana, Sans-Serif;
+    background: #eee;
+    }
+    #container {
+    margin: 100px auto;
+    width: 688px;
+    }
+    #write {
+    margin: 0 0 5px;
+    padding: 5px;
+    width: 671px;
+    height: 200px;
+    font: 1em/1.5 Verdana, Sans-Serif;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    }
+    </style>
+        </nav>
+    </body>
+</html>
