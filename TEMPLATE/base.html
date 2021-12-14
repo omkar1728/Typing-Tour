@@ -12,7 +12,7 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <a href="#" class="navbar-brand mb-0 h1">Typing Tour</a>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav";>
+                <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a href="{% url 'leaderboard' %}" class="nav-link">Leaderboard</a>
                     </li>
@@ -34,15 +34,15 @@
                     <div class="tabs">
                         <ul>
                             
-                            <a href="{% url 'keyboard'%}" class="link">Easy</a>
+                            <a href="{% url 'keyboard' %}" class="link">Easy</a>
                             &nbsp;
                             &nbsp;
                             &nbsp;
-                            <a href="{% url 'keyboard'%}" class="link">Medium </a>
+                            <a href="{% url 'keyboard' %}" class="link">Medium </a>
                             &nbsp;
                             &nbsp;
                             &nbsp;
-                            <a href="{% url 'keyboard'%}" class="link">Advanced</a>
+                            <a href="{% url 'keyboard' %}" class="link">Advanced</a>
                         </ul>
                     </div>
                 </div>
@@ -61,8 +61,8 @@
 
 } */
 * {
-margin: 10;
-padding: 10;
+margin: 0;
+padding: 0;
 }
 
 *{
@@ -86,7 +86,7 @@ body{
 	width: 500px;
 	height: 400px;
 	margin: 100px auto 0;
-	background: #f94f62;
+	background:yellow;
 	padding: 25px 40px;
 	position: relative;
 	border-radius: 5px;
@@ -100,7 +100,7 @@ body{
 	margin-right: 50px;
 	font-size: 18px;
 	font-weight: 600;
-	color: #ffed47;
+	color: #3a3d51;
 	cursor: pointer;
 }
 
@@ -108,13 +108,14 @@ body{
 .lboard_section .lboard_tabs ul li.active{
 	color: #fff;
 }
+a:hover{
+        color: white;
+        background-color:#3a3d51;
+    }
     a{
+        color: blue;
         text-decoration: none;
         padding: 10px 20px;
-    }
-    a:hover{
-        color: white;
-        background-color: red;
     }
                 </style>
     </body>

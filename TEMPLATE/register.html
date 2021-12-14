@@ -9,7 +9,7 @@
             <form class="login_form" method="POST">
                 {% csrf_token %}
                 <input type="text" name = 'Username' placeholder="Username"/>
-                <input type="text" name = 'Password'placeholder="Password"/>
+                <input type="password" name = 'Password'placeholder="Password"/>
                 <button type="submit"><a href="{% url 'login' %}">Register</a></button> 
             </form>
             </div>

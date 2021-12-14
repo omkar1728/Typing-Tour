@@ -1,293 +1,348 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Typing Tour</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
 
-	<title>Online Keyboard</title>
-	<!-- css -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" type="text/css" href="css/keyboard_style.css" /> -->
+    <!-- bootstrap scripts -->
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-	<!-- bootstrap scripts -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-</head>
-<body>
-	<!-- Nav Bar -->
-	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-		<a href="#" class="navbar-brand mb-0 h1">Typing Tour</a>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a href="#" class="nav-link">Home</a>
-				</li>
-				<li class="nav-item active">
-					<a href="#" class="nav-link">Features</a>
-				</li>
-				<li class="nav-item active">
-					<a href="#" class="nav-link">Pricing</a>
-				</li>
-			</ul>
-
-		</div>
-
-	</nav>
-<div id="container">
-	<!-- <textarea id="write" rows="6" cols="60"></textarea> -->
-	<div class="row">
-		<div class="col-lg-6">
-			<h2 id="msg"></h2>
-		<!-- <textarea name="myInput" id="write1"  cols="50" rows="15" minlength="15" maxlength="500" required></textarea> -->
-	  </div>
-		<div class="col-lg-6">
-			<textarea name="myInput" id="write2" cols="50" rows="15" placeholder="Type Here....." minlength="15" maxlength="500" required></textarea>
-		</div>
-		<button  id="btn" class="mainbtn" >Start</button>
-	</div>
-
-
-	<ul id="keyboard">
-		<li class="symbol"><span class="off">`</span><span class="on">~</span></li>
-		<li class="symbol"><span class="off">2</span><span class="on">@</span></li>
-		<li class="symbol"><span class="off">3</span><span class="on">#</span></li>
-		<li class="symbol"><span class="off">1</span><span class="on">!</span></li>
-		<li class="symbol"><span class="off">4</span><span class="on">$</span></li>
-		<li class="symbol"><span class="off">5</span><span class="on">%</span></li>
-		<li class="symbol"><span class="off">6</span><span class="on">^</span></li>
-		<li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
-		<li class="symbol"><span class="off">8</span><span class="on">*</span></li>
-		<li class="symbol"><span class="off">9</span><span class="on">(</span></li>
-		<li class="symbol"><span class="off">0</span><span class="on">)</span></li>
-		<li class="symbol"><span class="off">-</span><span class="on">_</span></li>
-		<li class="symbol"><span class="off">=</span><span class="on">+</span></li>
-		<li class="delete lastitem">delete</li>
-		<li class="tab">tab</li>
-		<li class="letter">q</li>
-		<li class="letter">w</li>
-		<li class="letter">e</li>
-		<li class="letter">r</li>
-		<li class="letter">t</li>
-		<li class="letter">y</li>
-		<li class="letter">u</li>
-		<li class="letter">i</li>
-		<li class="letter">o</li>
-		<li class="letter">p</li>
-		<li class="symbol"><span class="off">[</span><span class="on">{</span></li>
-		<li class="symbol"><span class="off">]</span><span class="on">}</span></li>
-		<li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
-		<li class="capslock">caps lock</li>
-		<li class="letter">a</li>
-		<li class="letter">s</li>
-		<li class="letter">d</li>
-		<li class="letter">f</li>
-		<li class="letter">g</li>
-		<li class="letter">h</li>
-		<li class="letter">j</li>
-		<li class="letter">k</li>
-		<li class="letter">l</li>
-		<li class="symbol"><span class="off">;</span><span class="on">:</span></li>
-		<li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
-		<li class="return lastitem">return</li>
-		<li class="left-shift">shift</li>
-		<li class="letter">z</li>
-		<li class="letter">x</li>
-		<li class="letter">c</li>
-		<li class="letter">v</li>
-		<li class="letter">b</li>
-		<li class="letter">n</li>
-		<li class="letter">m</li>
-		<li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
-		<li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
-		<li class="symbol"><span class="off">/</span><span class="on">?</span></li>
-		<li class="right-shift lastitem">shift</li>
-		<li class="space lastitem">&nbsp;</li>
-	</ul>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <div class="Navbar">
+  <nav class="Navbar__Items">
+    <div class="Navbar__Link Navbar__Link-brand">
+     Typing Tour
+    </div>
+    <div class="Navbar__Link">
+      <a href="{% url 'leaderboard' %}" class="nav-link">Leaderboard</a>
+    </div>
+    <div class="Navbar__Link">
+      <a href="{% url 'contactUs' %}" class="nav-link">Contact Us</a>
+    </div>
+    <div class="Navbar__Link">
+      <a href="{% url 'about us' %}" class="nav-link">About</a>
+    </div>
+  </nav>
 </div>
-<!-- css inline -->
-<style media="screen">
-.navbar-brand{
-	font-size: 30px;
-	padding-left: 400px;
-	padding-top: 5px;
-}
-.nav-item{
-	padding-left: 20px;
-	font-size: 15px;
-}
-.nav-link{
+  <div class="">
+    <button type="button" name="button"><a href="{% url 'base' %}">Go to Homepage</a></button>
+  </div>
 
-} */
-* {
-margin: 0;
-padding: 0;
+
+
+
+
+    <div class="container">
+      <div class="stats">
+        <p>Time: <span id="timer">0s</span></p>
+        <p>Mistakes: <span id="mistakes">0</span></p>
+      </div>
+      <div
+        id="quote"
+        onmousedown="return false"
+        onselectstart="return false"
+      ></div>
+      <textarea
+        rows="3"
+        id="quote-input"
+        placeholder="Type here when the test starts.."
+      ></textarea>
+      <button id="start-test" onclick="startTest()">Start Test</button>
+      <button id="stop-test" onclick="displayResult()">Stop Test</button>
+      <div class="result">
+        <h3>Result</h3>
+        <div class="wrapper">
+          <p>Accuracy: <span id="accuracy"></span></p>
+          <p>Speed: <span id="wpm"></span></p>
+        </div>
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
+
+<!-- inline css -->
+
+<style media="screen">
+.btn {
+  background: #4C3F91;
+  background-image: -webkit-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: -moz-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: -ms-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: -o-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: linear-gradient(to bottom, #4C3F91, #4C3F91);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #F999B7;
+  background-image: -webkit-linear-gradient(top, #F999B7, #FF5677);
+  background-image: -moz-linear-gradient(top, #F999B7, #FF5677);
+  background-image: -ms-linear-gradient(top, #F999B7, #FF5677);
+  background-image: -o-linear-gradient(top, #F999B7, #FF5677);
+  background-image: linear-gradient(to bottom, #F999B7, #FF5677);
+  text-decoration: none;
+}
+  .Navbar {
+  background-color: #041C32;
+  display: flex;
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+.Navbar__Items {
+  display:flex;
+}
+.Navbar__Link {
+  padding-right: 8px;
+  size: 100px;
+  color: white;
+}
+
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 body {
-font: 71%/1.5 Verdana, Sans-Serif;
-background: #eee;
+  background-color: #EDD2F3;
 }
-#container {
-margin: 100px auto;
-width: 688px;
+.container {
+  width: 80vmin;
+  padding: 50px 30px;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
-/* #write1 {
-margin: 0 0 5px;
-padding: 5px;
-width: 671px;
-height: 200px;
-font: 2em Verdana, Sans-Serif;
-background: #fff;
-border: 1px solid #f9f9f9;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-} */
-#write2 {
-margin: 0 0 5px;
-padding: 5px;
-width: 671px;
-height: 200px;
-position: center;
-font: 2em Verdana, Sans-Serif;
-background: #fff;
-border: 1px solid #f9f9f9;
-border-radius: 10px 10ox 0 0;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
+.stats {
+  text-align: right;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
-#keyboard {
-margin: 0;
-padding: 0;
-list-style: none;
+.stats span {
+  font-weight: 600;
 }
-	#keyboard li {
-	float: left;
-	margin: 0 5px 5px 0;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	background: #fff;
-	border: 1px solid #f9f9f9;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	}
-		.capslock, .tab, .left-shift {
-		clear: left;
-		}
-			#keyboard .tab, #keyboard .delete {
-			width: 70px;
-			}
-			#keyboard .capslock {
-			width: 80px;
-			}
-			#keyboard .return {
-			width: 77px;
-			}
-			#keyboard .left-shift {
-			width: 95px;
-			}
-			#keyboard .right-shift {
-			width: 109px;
-			}
-		.lastitem {
-		margin-right: 0;
-		}
-		.uppercase {
-		text-transform: uppercase;
-		}
-		#keyboard .space {
-		clear: left;
-		width: 681px;
-		}
-		.on {
-		display: none;
-		}
-		#keyboard li:hover {
-		position: relative;
-		top: 1px;
-		left: 1px;
-		border-color: #e5e5e5;
-		cursor: pointer;
-		}
+#quote {
+  text-align: justify;
+  margin: 50px 0 30px 0;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 5px;
+  font-size: 16px;
+}
+button {
+  float: right;
+  margin-top: 20px;
+  background-color: #cecb15;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.result {
+  margin-top: 40px;
+  display: none;
+}
+.result h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapper span {
+  font-weight: 600;
+}
+.success {
+  color: #44b267;
+}
+.fail {
+  color: #e81c4e;
+}
+
+a:link {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 10px;
+}
+a:visited {
+  color: grey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
 
 </style>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<!-- scripts inline -->
-
+<!-- inline scripts -->
 <script type="text/javascript">
-$(function(){
-	var $write = $('#write'),
-		shift = false,
-		capslock = false;
+  //Random Quotes Api URL
+const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100";
+const quoteSection = document.getElementById("quote");
+const userInput = document.getElementById("quote-input");
+let quote = "";
+let time = 60;
+let timer = "";
+let mistakes = 0;
 
-	$('#keyboard li').click(function(){
-		var $this = $(this),
-			character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
+//Display random quotes
+const renderNewQuote = async () => {
+  //Fetch contents from url
+  const response = await fetch(quoteApiUrl);
 
-		// Shift keys
-		if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
-			$('.letter').toggleClass('uppercase');
-			$('.symbol span').toggle();
+  //Store response
+  let data = await response.json();
 
-			shift = (shift === true) ? false : true;
-			capslock = false;
-			return false;
-		}
+  //Access quote
+  quote = data.content;
 
-		// Caps lock
-		if ($this.hasClass('capslock')) {
-			$('.letter').toggleClass('uppercase');
-			capslock = true;
-			return false;
-		}
+  //Array of characters in the quote
+  let arr = quote.split("").map((value) => {
+    //wrap the characters in a span tag
+    return "<span class='quote-chars'>" + value + "</span>";
+  });
+  //join array for displaying
+  quoteSection.innerHTML += arr.join("");
+};
 
-		// Delete
-		if ($this.hasClass('delete')) {
-			var html = $write.html();
+//Logic for comparing input words with quote
+userInput.addEventListener("input", () => {
+  let quoteChars = document.querySelectorAll(".quote-chars");
+  //Create an arrat from received span tags
+  quoteChars = Array.from(quoteChars);
 
-			$write.html(html.substr(0, html.length - 1));
-			return false;
-		}
+  //array of user input characters
+  let userInputChars = userInput.value.split("");
 
-		// Special characters
-		if ($this.hasClass('symbol')) character = $('span:visible', $this).html();
-		if ($this.hasClass('space')) character = ' ';
-		if ($this.hasClass('tab')) character = "\t";
-		if ($this.hasClass('return')) character = "\n";
-
-		// Uppercase letter
-		if ($this.hasClass('uppercase')) character = character.toUpperCase();
-
-		// Remove shift once a key is clicked.
-		if (shift === true) {
-			$('.symbol span').toggle();
-			if (capslock === false) $('.letter').toggleClass('uppercase');
-
-			shift = false;
-		}
-
-		// Add the character
-		$write.html($write.html() + character);
-	});
+  //loop through each character in quote
+  quoteChars.forEach((char, index) => {
+    //Check if char(quote character) = userInputChars[index](input character)
+    if (char.innerText == userInputChars[index]) {
+      char.classList.add("success");
+    }
+    //If user hasn't entered anything or backspaced
+    else if (userInputChars[index] == null) {
+      //Remove class if any
+      if (char.classList.contains("success")) {
+        char.classList.remove("success");
+      } else {
+        char.classList.remove("fail");
+      }
+    }
+    //If user enter wrong character
+    else {
+      //Checks if we alreasy have added fail class
+      if (!char.classList.contains("fail")) {
+        //increment and display mistakes
+        mistakes += 1;
+        char.classList.add("fail");
+      }
+      document.getElementById("mistakes").innerText = mistakes;
+    }
+    //Returns true if all the characters are entered correctly
+    let check = quoteChars.every((element) => {
+      return element.classList.contains("success");
+    });
+    //End test if all characters are correct
+    if (check) {
+      displayResult();
+    }
+  });
 });
-const setOfWords = ["this is typing tour website and it helps in your typing skills"];
-const msg = document.getElementById('msg');
-const write2 = document.getElementById('write2');
-let startTime, endTime;
 
-playGame = () =>{
-	let randomNumber = Math.floor(Math.random()*setOfWords.length);
-	msg.innerText = setOfWords[randomNumber];
+//Update Timer on screen
+function updateTimer() {
+  if (time == 0) {
+    //End test if timer reaches 0
+    displayResult();
+  } else {
+    document.getElementById("timer").innerText = --time + "s";
+  }
 }
 
-btn.addEventListener('click', function(){
-	if (this.innerText == 'Start') {
-		write2.diabled = false;
-		playGame();
+//Sets timer
+const timeReduce = () => {
+  time = 60;
+  timer = setInterval(updateTimer, 1000);
+};
 
-	}
-})
+//End Test
+const displayResult = () => {
+  //display result div
+  document.querySelector(".result").style.display = "block";
+  clearInterval(timer);
+  document.getElementById("stop-test").style.display = "none";
+  userInput.disabled = true;
+  let timeTaken = 1;
+  if (time != 0) {
+    timeTaken = (60 - time) / 100;
+  }
+  document.getElementById("wpm").innerText =
+    (userInput.value.length / 5 / timeTaken).toFixed(2) + " wpm";
+  document.getElementById("accuracy").innerText =
+    Math.round(
+      ((userInput.value.length - mistakes) / userInput.value.length) * 100
+    ) + " %";
+};
+
+//Start Test
+const startTest = () => {
+  mistakes = 0;
+  timer = "";
+  userInput.disabled = false;
+  timeReduce();
+  document.getElementById("start-test").style.display = "none";
+  document.getElementById("stop-test").style.display = "block";
+};
+
+window.onload = () => {
+  userInput.value = "";
+  document.getElementById("start-test").style.display = "block";
+  document.getElementById("stop-test").style.display = "none";
+  userInput.disabled = true;
+  renderNewQuote();
+};
+
 </script>
-<!-- <script type="text/javascript" src="js/keyboard_js.js"></script> -->
-</body>
-</html>
