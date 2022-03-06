@@ -8,6 +8,7 @@ urlpatterns = [
     path('/keyboard',views.keyboard,name='keyboard'),
     path('/levels',views.levels,name='levels'),
     path('/practice',views.pracitce,name='practice'),
+    path('/profile',views.profile,name='profile'),
     
 
 ]

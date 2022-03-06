@@ -19,4 +19,6 @@ def levels(request):
 
 def pracitce(request):
     return render(request, 'practice.html')
-    
+
+def profile(request):
+    return render(request, 'profile.html')
