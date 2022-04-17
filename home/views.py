@@ -18,6 +18,7 @@ def levels(request):
     return render(request, 'level_selection.html')
 
 def pracitce(request):
+    cont = {}
     return render(request, 'practice.html')
 
 def profile(request):
