@@ -1,0 +1,732 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Typing Tour</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+     <!-- Nav Bar -->
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a href="#" class="navbar-brand mb-0 h1">Typing Tour</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav";>
+            <li class="nav-item active">
+              <a href="{% url 'profile' %}" class="nav-link">Profile</a>
+          </li>
+              <li class="nav-item active">
+                  <a href="{% url 'leaderboard' %}" class="nav-link">Leaderboard</a>
+              </li>
+              <li class="nav-item active">
+                  <a href="{% url 'contactUs' %}" class="nav-link">Contact Us</a>
+              </li>
+              <li class="nav-item active">
+                  <a href="{% url 'about us' %}" class="nav-link">About</a>
+              </li>
+          </ul>
+  
+      </div>
+ 
+
+  </nav>
+  <!-- <div class="">
+    <button type="button" name="button"><a href="#">Go to Homepage</a></button>
+    
+  </div> -->
+
+<h3 class="headline">Hey, Ready to test your skills ? </h3>
+
+
+
+    <div class="container">
+      <div class="stats">
+        <p>Time: <span id="timer">0s</span>   Mistakes: <span id="mistakes">0</span></p>
+        
+      </div>
+      <div
+        id="quote"
+        onmousedown="return false"
+        onselectstart="return false"
+        style="size: 100px; text-size-adjust: 50px;"
+      ></div>
+      <textarea
+        rows="3"
+        id="quote-input"
+        placeholder="Type here when the test starts.."
+      ></textarea>
+      <button id="start-test" onclick="startTest()">Start Test</button>
+      <button id="stop-test" onclick="displayResult()">Stop Test</button>
+      <div class="result">
+        <h3>Result</h3>
+        <div class="wrapper">
+          <p>Accuracy: <span id="accuracy"></span> Speed: <span id="wpm"></span></p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container2">
+
+      <div class="keyboard_wrap" style="background-color: #3E065F;width: 1000px;">
+          <div class="keyboard_keys">
+              <div class="row">
+                  <div class="keys">`</div>
+                  <div class="keys">1</div>
+                  <div class="keys">2</div>
+                  <div class="keys">3</div>
+                  <div class="keys">4</div>
+                  <div class="keys">5</div>
+                  <div class="keys">6</div>
+                  <div class="keys">7</div>
+                  <div class="keys">8</div>
+                  <div class="keys">9</div>
+                  <div class="keys">0</div>
+                  <div class="keys">-</div>
+                  <div class="keys">=</div>
+                  <div class="keys backspace_key">Backspace</div>
+                  
+              </div>
+              <div class="row">
+                  <div class="keys tab_key">Tab</div>
+                  <div class="keys">Q</div>
+                  <div class="keys">W</div>
+                  <div class="keys">E</div>
+                  <div class="keys">R</div>
+                  <div class="keys">T</div>
+                  <div class="keys">Y</div>
+                  <div class="keys">U</div>
+                  <div class="keys">I</div>
+                  <div class="keys">O</div>
+                  <div class="keys">P</div>
+                  <div class="keys">[</div>
+                  <div class="keys">]</div>
+                  <div class="keys slash_key">\</div>
+              </div>
+              <div class="row">
+                  <div class="keys caps_lock_key">Caps Lock</div>
+                  <div class="keys">A</div>
+                  <div class="keys">S</div>
+                  <div class="keys">D</div>
+                  <div class="keys">F</div>
+                  <div class="keys">G</div>
+                  <div class="keys">H</div>
+                  <div class="keys">J</div>
+                  <div class="keys">K</div>
+                  <div class="keys">L</div>
+                  <div class="keys">;</div>
+                  <div class="keys">"</div>
+                  <div class="keys enter_key">Enter</div>
+              </div>
+              <div class="row">
+                  <div class="keys shift_key shift_left">Shift</div>
+                  <div class="keys">Z</div>
+                  <div class="keys">X</div>
+                  <div class="keys">C</div>
+                  <div class="keys">V</div>
+                  <div class="keys">B</div>
+                  <div class="keys">N</div>
+                  <div class="keys">M</div>
+                  <div class="keys"><</div>
+                  <div class="keys">></div>
+                  <div class="keys">/</div>
+                  <div class="keys">?</div>
+                  <div class="keys shift_key shift_right">Shift</div>
+              </div>
+              <div class="row">
+                  <div class="keys ctrl_key ctrl_left">Ctrl</div>
+                  <div class="keys win_key">Win</div>
+                  <div class="keys alt_key alt_left">Alt</div>
+                  <div class="keys space_key"></div>
+                  <div class="keys alt_key alt_right">Alt</div>
+                  <div class="keys">Fn</div>
+                  <div class="keys ctrl_key ctrl_right">Ctrl</div>
+              </div>
+          </div>
+      </div>
+     
+  </div>
+
+
+
+    <!-- Script -->
+    <script src="script.js"></script>
+
+  <footer style="text-align: center; color: #e6e6e6; margin-bottom: 10px;">© Typing Tour </footer>
+  </body>
+</html>
+
+<!-- inline css -->
+
+<style media="screen">
+h3{
+  color: #fff;
+  
+}
+  .headline{
+    text-align: center;
+    color: #fff;
+    margin-top: 1.2%;
+  }
+.btn {
+  background: #4C3F91;
+  background-image: -webkit-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: -moz-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: -ms-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: -o-linear-gradient(top, #4C3F91, #4C3F91);
+  background-image: linear-gradient(to bottom, #4C3F91, #4C3F91);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #F999B7;
+  background-image: -webkit-linear-gradient(top, #F999B7, #FF5677);
+  background-image: -moz-linear-gradient(top, #F999B7, #FF5677);
+  background-image: -ms-linear-gradient(top, #F999B7, #FF5677);
+  background-image: -o-linear-gradient(top, #F999B7, #FF5677);
+  background-image: linear-gradient(to bottom, #F999B7, #FF5677);
+  text-decoration: none;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+.nav-item{
+    padding-left: 50px;
+    font-size: 15px;
+}
+
+
+#container {
+margin: 100px auto;
+width: 688px;
+}
+#write {
+margin: 0 0 5px;
+padding: 5px;
+width: 671px;
+height: 200px;
+font: 1em/1.5 Verdana, Sans-Serif;
+background: #fff;
+border: 1px solid #f9f9f9;
+/* -moz-border-radius: 5px;
+-webkit-border-radius: 5px; */
+}
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #000;
+}
+.container {
+  padding: 10px 30px;
+  /* width: 80vmin;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
+}
+.stats {
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+  /* text-align: right;
+  font-size: 18px;
+  margin-bottom: 30px; */
+}
+.stats span {
+  font-weight: 600;
+}
+#quote {
+  text-align: justify;
+  margin: 20px 0 30px 0;
+  color: #fff;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 5px;
+  font-size: 16px;
+  
+}
+button {
+  float: right;
+  margin-top: 20px;
+  background-color: #4C3F91;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+/* .result {
+  margin-top: 40px;
+  display: none;
+}
+.result h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapper span {
+  font-weight: 600;
+} */
+.wrapper{
+  color: #fff;
+}
+#accuracy{
+  font-weight: 600;
+}
+#wpm{
+  font-weight: 600;
+}
+.success {
+  color: #44b267;
+}
+.fail {
+  color: #e81c4e;
+}
+
+/* keyboard styling */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+* {
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    transition: .2s;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    flex-direction: column;
+    margin: 0 10px;
+    
+}
+
+.keyboard_wrapp {
+    max-width: 1008px;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    order: 2;
+}
+
+.row {
+    display: flex;
+}
+
+.keys {
+    width: 60px;
+    height: 60px;
+    background-color: 	#808080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    transition: .2s;
+    z-index: 5;
+    
+}
+
+.backspace_key {
+    width: 120px;
+}
+
+.tab_key {
+    width: 90px;
+}
+
+.slash_key {
+    width: 90px;
+}
+
+.caps_lock_key {
+    width: 128px;
+}
+
+.enter_key {
+    width: 120px;
+}
+
+.shift_key {
+    width: 124px;
+}
+
+.space_key {
+    max-width: 600px;
+    width: 100%;
+}
+
+.text {
+    max-width: 1008px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    font-size: 26px;
+    background-color: #fff;
+    padding-left: 10px;
+    transition: .2s;
+}
+
+.keys.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.keys.remove {
+    animation: keys_animation 0.5s forwards ;
+}
+
+@keyframes keys_animation {
+    0% {
+        background-color: #333;
+        color: #fff;
+    }
+    100% {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+body.active {
+    background-color: rgb(54,54,54);
+}
+
+.night_mode {
+    width: 80px;
+    height: 30px;
+    background-color: #e6e6e6;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.night_mode.active {
+    background-color: #222222;
+}
+
+.toggle_circle {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(54,54,54);
+    border-radius: 50px;
+    margin: 0 5px;
+    position: absolute;
+    left: 0;
+    transition: .2s;
+}
+
+.toggle_circle.active {
+    left: 60%;
+    background-color: #fff;
+}
+
+.keyboard_wrapp.active {
+    background-color: #585858;
+}
+
+.keys.keys_night {
+    background-color: #3c3c3c;
+    color: #fff;
+}
+
+.text.active {
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+.keys.keys_night.active {
+    background-color: #fff;
+    color: #333;
+}
+
+.keys.keys_night.remove {
+    animation: keys_night_animation 0.5s forwards;
+}
+
+@keyframes keys_night_animation {
+    0%{
+        background-color: #fff;
+        color: #000;
+    }
+    100% {
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+.change_light_color {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    right: 150px;
+    top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colors_input {
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.keyboard_lights {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+</style>
+
+<!-- inline scripts -->
+<script type="text/javascript">
+  //Random Quotes Api URL
+const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100";
+const quoteSection = document.getElementById("quote");
+const userInput = document.getElementById("quote-input");
+let quote = "";
+let time = 60;
+let timer = "";
+let mistakes = 0;
+
+//Display random quotes
+const renderNewQuote = async () => {
+  //Fetch contents from url
+  const response = await fetch(quoteApiUrl);
+
+  //Store response
+  let data = await response.json();
+
+  //Access quote
+  quote = data.content;
+  quote = "uu rr ru ur rru uur ruru urur rruu"
+  //Array of characters in the quote
+  let arr = quote.split("").map((value) => {
+    //wrap the characters in a span tag
+    return "<span class='quote-chars'>" + value + "</span>";
+  });
+  //join array for displaying
+  quoteSection.innerHTML += arr.join("");
+};
+
+//Logic for comparing input words with quote
+userInput.addEventListener("input", () => {
+  let quoteChars = document.querySelectorAll(".quote-chars");
+  //Create an arrat from received span tags
+  quoteChars = Array.from(quoteChars);
+
+  //array of user input characters
+  let userInputChars = userInput.value.split("");
+
+  //loop through each character in quote
+  quoteChars.forEach((char, index) => {
+    //Check if char(quote character) = userInputChars[index](input character)
+    if (char.innerText == userInputChars[index]) {
+      char.classList.add("success");
+    }
+    //If user hasn't entered anything or backspaced
+    else if (userInputChars[index] == null) {
+      //Remove class if any
+      if (char.classList.contains("success")) {
+        char.classList.remove("success");
+      } else {
+        char.classList.remove("fail");
+      }
+    }
+    //If user enter wrong character
+    else {
+      //Checks if we alreasy have added fail class
+      if (!char.classList.contains("fail")) {
+        //increment and display mistakes
+        mistakes += 1;
+        char.classList.add("fail");
+      }
+      document.getElementById("mistakes").innerText = mistakes; 
+    }
+    //Returns true if all the characters are entered correctly
+    let check = quoteChars.every((element) => {
+      return element.classList.contains("success");
+    });
+    //End test if all characters are correct
+    if (check) {
+      displayResult();
+    }
+  });
+});
+
+//Update Timer on screen
+function updateTimer() {
+  if (time == 0) {
+    //End test if timer reaches 0
+    displayResult();
+  } else {
+    document.getElementById("timer").innerText = --time + "s";
+  }
+}
+
+//Sets timer
+const timeReduce = () => {
+  time = 60;
+  timer = setInterval(updateTimer, 1000);
+};
+
+//End Test
+const displayResult = () => {
+  //display result div
+  document.querySelector(".result").style.display = "block";
+  clearInterval(timer);
+  document.getElementById("stop-test").style.display = "none";
+  userInput.disabled = true;
+  let timeTaken = 1;
+  if (time != 0) {
+    timeTaken = (60 - time) / 100;
+  }
+  document.getElementById("wpm").innerText =
+    (userInput.value.length / 5 / timeTaken).toFixed(2) + " wpm";
+  document.getElementById("accuracy").innerText =
+    Math.round(
+      ((userInput.value.length - mistakes) / userInput.value.length) * 100
+    ) + " %";
+};
+
+//Start Test
+const startTest = () => {
+  mistakes = 0;
+  timer = "";
+  userInput.disabled = false;
+  timeReduce();
+  document.getElementById("start-test").style.display = "none";
+  document.getElementById("stop-test").style.display = "block";
+};
+
+window.onload = () => {
+  userInput.value = "";
+  document.getElementById("start-test").style.display = "block";
+  document.getElementById("stop-test").style.display = "none";
+  userInput.disabled = true;
+  renderNewQuote();
+};
+
+// keyboard 
+let keys = document.querySelectorAll('.keys');
+let spaceKey = document.querySelector('.space_key');
+let shift_left = document.querySelector('.shift_left');
+let shift_right = document.querySelector('.shift_right');
+let caps_lock_key = document.querySelector('.caps_lock_key');
+let toggle_circle = document.querySelector('.toggle_circle');
+let night_mode = document.querySelector('.night_mode');
+let body = document.querySelector('body');
+let text_input = document.querySelector('.text');
+let change_color = document.querySelector('.change_light_color');
+let colors_input = document.querySelector('.colors_input');
+let keyboard_lights = document.querySelector('.keyboard_lights');
+let keyboard_wrapp = document.querySelector('.keyboard_wrapp');
+
+for(let i = 0; i < keys.length; i++) {
+    keys[i].setAttribute('keyname', keys[i].innerText);
+    keys[i].setAttribute('lowerCaseName', keys[i].innerText.toLowerCase());
+}
+
+window.addEventListener('keydown', function (e) {
+    for (let i = 0; i < keys.length; i++) {
+        if(e.key == keys[i].getAttribute('keyname' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
+            keys[i].classList.add('active')
+        }
+        if(e.code == 'Space') {
+            spaceKey.classList.add('active')
+        }
+        if(e.code == 'ShiftLeft') {
+            shift_right.classList.remove('active')
+        }
+        if(e.code == 'ShiftRight') {
+            shift_left.classList.remove('active')
+        }
+        if(e.code == 'CapsLock') {
+            caps_lock_key.classList.toggle('active');
+        }
+        
+    }
+})
+
+window.addEventListener('keyup', function(e) {
+    for(let i = 0; i < keys.length; i++) {
+        if(e.key == keys[i].getAttribute('keyname' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
+            keys[i].classList.remove('active')
+            keys[i].classList.add('remove')
+        }
+        if(e.code == 'Space') {
+            spaceKey.classList.remove('active');
+            spaceKey.classList.add('remove');
+        }
+        if(e.code == 'ShiftLeft') {
+            shift_right.classList.remove('active')
+            shift_right.classList.remove('remove')
+        }
+        if(e.code == 'ShiftRight') {
+            shift_left.classList.remove('active')
+            shift_left.classList.remove('remove')
+        }
+        setTimeout(()=> {
+            keys[i].classList.remove('remove')
+        },200)
+    }
+})
+
+</script>
